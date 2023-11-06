@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // console.log("start");
+      // setTimeout(() => {
+      //   console.log("hello");
+      // }, 2000);
+      // console.log("end");
+
+      // console.log("start");
+      // setTimeout(() => {
+      //   console.log("hello");
+      // }, 0);
+      // console.log("end");
+
+      console.log("start");
+      setTimeout(() => {
+        console.log("hello");
+      }, 0);
+      for (let i = 0; i > -10000; i++) {
+        console.log("end");
+      }
+
+      // setTimeout(function sayHello() {
+      //   console.log("hello");
+      // }, 2000);
+      // setTimeout(() => {
+      //   console.log("hello");
+      // }, 2000);
+
+      function sayHello(greeting) {
+        console.log(greeting);
+      }
+      console.log("start");
+      setTimeout(sayHello("hello"), 3000); //executes immediately because you are calling a function instead of passing a callback
+      setTimeout(() => sayHello("hola"), 4000);
+      setTimeout(function () {
+        sayHello("namaste");
+      }, 3000);
+      console.log("end");
+    </script>
+  </body>
+</html>

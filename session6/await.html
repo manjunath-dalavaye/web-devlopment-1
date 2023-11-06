@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center;">
+      <h1>Once Kanye said</h1>
+      <div id="quote"></div>
+    </div>
+    <script>
+      const quoteContainer = document.querySelector("#quote"); //selecting the element by id
+      // async function fetchQuote() {
+
+      // }
+      const fetchQuote = async () => {
+        //i going to tell the js engine to i am making some api call
+        const response = await fetch("https://api.kanye.rest/");
+        const json = await response.json(); //converting api response into the json format (string format)
+        return json.quote; //we get the quote stirng
+      };
+
+      const addQuoteToDOM = (quote) => {
+        quoteContainer.textContent = quote;
+      };
+
+      const addErrorToDOM = () => {
+        const errorImageElement = document.createElement("img");
+        errorImageElement.src =
+          "https://media.datacenterdynamics.com/media/images/Google_Down.robot.2e16d0ba.fill-1200x630.png";
+        quoteContainer.append(errorImageElement);
+        //     (quoteContainer.innerHTML =
+        //       '<img src="https://media.datacenterdynamics.com/media/images/Google_Down.robot.2e16d0ba.fill-1200x630.png">')
+      };
+
+      const quoteKanye = async () => {
+        try {
+          const quote = await fetchQuote(); //await is use in only async function
+          addQuoteToDOM(quote);
+        } catch (error) {
+          addErrorToDOM();
+        }
+      };
+      quoteKanye();
+    </script>
+  </body>
+</html>

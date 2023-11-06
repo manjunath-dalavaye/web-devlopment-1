@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ol id="githubUsers"></ol>
+    <script>
+      fetch("https://api.github.com/users")
+        .then((res) => res.json())
+        .then((data) => {
+          data.forEach((user) => {
+            const listElement = document.createElement("li");
+            listElement.textContent = user.login;
+            document.querySelector("#githubUsers").append(listElement);
+          });
+        });
+    </script>
+  </body>
+</html>

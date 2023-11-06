@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>User Data</h1>
+    <input
+      type="text"
+      placeholder="Enter full name"
+      name="fullName"
+      id="fullName"
+    />
+    <input type="email" placeholder="Email" name="email" id="email" />
+    <button id="showBtn">Show Details</button>
+    <script>
+      const data = {
+        fullName: "",
+        email: ""
+      };
+      const fullNameEle = document.querySelector("#fullName");
+      const emailEle = document.querySelector("#email");
+      const showBtnEle = document.querySelector("#showBtn");
+
+      fullNameEle.addEventListener("input", (e) => {
+        data["fullName"] = e.target.value;
+      });
+      emailEle.addEventListener("input", (e) => {
+        data["email"] = e.target.value;
+      });
+      showBtnEle.addEventListener("click", () => {
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>

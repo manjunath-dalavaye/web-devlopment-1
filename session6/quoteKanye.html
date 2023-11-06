@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="quote"></div>
+    <button onclick="showQuote()">Show Quote</button>
+    <script>
+      const quoteContainer = document.querySelector("#quote");
+
+      //three states of a promise ->
+      // pending
+      // fulfilled
+      // rejected
+      // const showQuote = () => {
+      //   const response = fetch("https://api.kanye.rest/");
+      //   response
+      //     .then((res) => {
+      //       const json = res.json();
+      //       json.then((data) => {
+      //         quoteContainer.textContent = data.quote;
+      //       });
+      //     })
+      //     .catch((err) => {
+      //       const errorImageElement = document.createElement("img");
+      //       errorImageElement.src =
+      //         "https://media.datacenterdynamics.com/media/images/Google_Down.robot.2e16d0ba.fill-1200x630.png";
+      //       quoteContainer.append(errorImageElement);
+      //       //     (quoteContainer.innerHTML =
+      //       //       '<img src="https://media.datacenterdynamics.com/media/images/Google_Down.robot.2e16d0ba.fill-1200x630.png">')
+      //     });
+      // };
+
+      //promise chaining
+
+      // const showQuoteChaining = () => {
+      //   const response = fetch("https://api.kanye.rest/");
+      //   response
+      //     .then((res) => {
+      //       return res.json();
+      //     })
+      //     .then((data) => {
+      //       quoteContainer.textContent = data.quote;
+      //     })
+      //     .catch((err) => {
+      //       const errorImageElement = document.createElement("img");
+      //       errorImageElement.src =
+      //         "https://media.datacenterdynamics.com/media/images/Google_Down.robot.2e16d0ba.fill-1200x630.png";
+      //       quoteContainer.append(errorImageElement);
+      //       //     (quoteContainer.innerHTML =
+      //       //       '<img src="https://media.datacenterdynamics.com/media/images/Google_Down.robot.2e16d0ba.fill-1200x630.png">')
+      //     });
+      // };
+    </script>
+  </body>
+</html>

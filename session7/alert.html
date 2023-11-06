@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="kunal">Click me alert</h1>
+    <button onclick="alertUser()">Click me</button>
+    <button id="clickThem">Click them</button>
+    <script>
+      const alertUser = () => alert("Clicked");
+
+      document.querySelector("#clickThem").addEventListener("click", alertUser);
+
+      const headingElement = document.querySelector("#kunal");
+      headingElement.addEventListener("mouseover", () => {
+        headingElement.style.color = "red";
+      });
+    </script>
+  </body>
+</html>

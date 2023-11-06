@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Counter</h1>
+    <h2 id="count">0</h2>
+    <button id="incrementBtn">+</button>
+    <button id="decrementBtn">-</button>
+    <script>
+      const countElement = document.querySelector("#count");
+
+      const handleCountChange = (e) => {
+        if (e.target.id === "incrementBtn")
+          countElement.textContent = parseInt(countElement.textContent) + 1;
+        if (e.target.id === "decrementBtn")
+          countElement.textContent = parseInt(countElement.textContent) - 1;
+      };
+
+      const incrementBtn = document.querySelector("#incrementBtn");
+      const decrementBtn = document.querySelector("#decrementBtn");
+
+      incrementBtn.addEventListener("click", handleCountChange);
+      decrementBtn.addEventListener("click", handleCountChange);
+    </script>
+  </body>
+</html>

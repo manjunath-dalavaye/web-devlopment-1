@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("start"); //1
+      // async function behaves like a sync function-->very imoprtent these two lines
+      // till the time JS engine hits await keyword
+      async function greet() {
+        console.log("inside the function"); // 2
+        const response = await fetch("https://api.kanye.rest/");
+        const json = await response.json();
+        console.log(json.quote); //3
+      }
+      greet(); // It will move on to the queueand after it will execute
+      console.log("end"); //4
+
+      // 1 4 2 3
+      // 1 2 4 3
+
+      // async function greet() {
+      //   console.log("lol");
+      // }
+      // console.log("javascript");
+
+      // greet();  // greet is callinng only after the greet function is called
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="characters">
+      <li>Raju</li>
+      <li>Shyam</li>
+    </ul>
+    <button onclick="addBaburao()">Add Baburao</button>
+    <script>
+      const addBaburao = () => {
+        const characters = document.querySelector("#characters");
+        // characters.innerHTML += "<li>Baburao</li>";
+        const listElement = document.createElement("li");
+        listElement.textContent = "Baburao";
+        characters.append(listElement);
+      };
+    </script>
+  </body>
+</html>

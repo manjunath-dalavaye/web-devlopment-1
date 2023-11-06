@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .para {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="para" id="mypara">
+      CR7 is the goat of football.
+    </p>
+    <p class="para" id="yourpara">
+      Leo Messi is the <span>stealer</span> of trophies
+    </p>
+    <button>Deepak</button>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+    <script>
+      //select the first DOM node that can be selected by the CSS query
+      const myPara = document.querySelector(".para");
+      console.log(myPara.textContent);
+
+      const paras = document.querySelectorAll("p"); //Node list
+      //const paras = document.querySelectorAll(".para"); //Node list
+      const parasArr = Array.from(paras);
+      console.log(paras);
+      console.log(parasArr);
+
+      const yourPara = document.querySelector("#yourpara");
+
+      const submitButton = document.querySelector("button[type='submit']");
+
+      const stealer = document.querySelector("#yourpara span");
+      stealer.textContent = "thief";
+    </script>
+  </body>
+</html>

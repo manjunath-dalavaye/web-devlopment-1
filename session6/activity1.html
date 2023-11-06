@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center;">
+      <h1>Once Kanye said</h1>
+      <div id="quote"></div>
+    </div>
+    <script>
+      const quoteContainer = document.querySelector("#quote");
+      const fetchQuote = () => {
+        return fetch("https://api.kanye.rest/").then((res) => res.json());
+      };
+
+      const addQuoteToDOM = (quote) => {
+        quoteContainer.textContent = quote;
+      };
+
+      const quoteKanye = () => {
+        fetchQuote().then((data) => {
+          addQuoteToDOM(data.quote);
+        });
+      };
+
+      quoteKanye();
+    </script>
+  </body>
+</html>

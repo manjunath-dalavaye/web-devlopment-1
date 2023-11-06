@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Selectors in JS</h1>
+    <h1>Tag, class and id selectors</h1>
+    <p class="odd">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eum, aut
+      placeat alias, quod quidem distinctio, quasi totam nostrum ab fuga sequi!
+      Ratione natus aliquid, mollitia dicta totam necessitatibus minima!
+    </p>
+    <p class="even">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eum, aut
+      placeat alias, quod quidem distinctio, quasi totam nostrum ab fuga sequi!
+      Ratione natus aliquid, mollitia dicta totam necessitatibus minima!
+    </p>
+    <p class="odd" id="thirdPara">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eum, aut
+      placeat alias, <span>quod quidem distinctio</span>, quasi totam nostrum ab
+      fuga sequi! Ratione natus aliquid, mollitia dicta totam necessitatibus
+      minima!
+    </p>
+    <p class="even">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eum, aut
+      placeat alias, quod quidem distinctio, quasi totam nostrum ab fuga sequi!
+      Ratione natus aliquid, mollitia dicta totam necessitatibus minima!
+    </p>
+    <script>
+      const headingElements = document.getElementsByTagName("h1"); //HTML collection
+      headingElements[0].textContent = "Noice selectors in JS";
+      const headingElementsArr = Array.from(headingElements);
+      //console.log(headingElementsArr);
+
+      const evenParagraphs = document.getElementsByClassName("even"); //HTML collection
+      //console.log(evenParagraphs);
+
+      const thirdPara = document.getElementById("thirdPara"); //HTML Element
+      //console.log(thirdPara);
+      // thirdPara.textContent = "CR7 is the GOAT of football";
+
+      console.log(thirdPara.textContent); //just the text
+      console.log(thirdPara.innerHTML); //also shows html
+      console.log(thirdPara.innerText); //human readable format of the text that is calculated by the browser
+    </script>
+  </body>
+</html>
